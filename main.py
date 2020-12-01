@@ -15,7 +15,7 @@ from whoosh.qparser import QueryParser
 from werkzeug.utils import secure_filename
 from werkzeug.exceptions import RequestEntityTooLarge
 
-from pagination import Pagination
+#from pagination import Pagination
 from utils import resize_image, center_crop_image, image2string, rotate_image_if_needed
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
@@ -59,8 +59,8 @@ model = torchvision.models.resnet50(pretrained = True)
 model.eval()
 
 # Load imagenet class names.
-imagenetClasses = {int(idx): entry[1] for (idx, entry) in 
-                   json.load(open('imagenet_class_index.json')).items()}
+#imagenetClasses = {int(idx): entry[1] for (idx, entry) in 
+#                   json.load(open('imagenet_class_index.json')).items()}
 
 @app.route('/simple-demo', methods = ["GET", "POST"])
 def simple_demo():
@@ -143,38 +143,6 @@ def simple_demo():
 			'input_image': input_image_str, 
 			'output_image': output_image_str,
 			'debug_str': debug_str}
-
-# COCO Captions Explorer.
-@app.route('/coco-explorer', methods = ["GET"])
-def coco_search():
-
-	# Obtain the query string.
-	query_str = request.args.get("query", "dog playing with ball")
-	page_num = request.args.get("page_num", 1, type = int)
-	page_len = request.args.get("page_len", 20, type = int)
-	split = request.args.get("split", "train")
-
-	# Location for the whoosh index to be queried.
-	coco_index_path = 'static/whoosh/cococaptions-indexdir-%s' % split
-	# Pre-load whoosh index to query coco-captions.
-	cococaptions_index = index.open_dir(coco_index_path)
-
-	# Return results and do any pre-formatting before sending to view.
-	with cococaptions_index.searcher() as searcher:
-		query = QueryParser("caption", cococaptions_index.schema).parse(query_str)
-		results = searcher.search_page(query, page_num, pagelen = page_len)
-
-		result_set = list()
-		for result in results:
-			result_set.append({"image_id": result["image_url"],
-							   "caption": result["caption"].split("<S>")})
-
-	# Create pagination navigation if needed.
-	pagination = Pagination(query_str, len(results), page_num, page_len, other_arguments = {'split': split})
-
-	# Render results template.
-	return render_template('coco-search.html', 
-            results = result_set, query = query_str, split = split, pagination = pagination)
 
 if __name__ == '__main__':
     # Used when running locally only. When deploying to Google App
