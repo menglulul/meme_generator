@@ -37,7 +37,8 @@ def simple_demo():
 	print("get text input: "+text_input)
 
 	start_time = time.time()
-	imgs = meme_demo.generate_meme(text_input)
+	imgs, output_texts = meme_demo.generate_meme(text_input)
+	print(output_texts)
 	debug_str = 'process took %.2f seconds' % (time.time() - start_time)
 
 	output_image_str = []
@@ -48,8 +49,13 @@ def simple_demo():
 		output_image_str.append(image2string(img))
 
 	return {'filename': text_input, 
-			'input_image': output_image_str[0], 
-			'output_image': output_image_str[1],
+			'output_image_1': output_image_str[0], 
+			'output_image_2': output_image_str[1],
+			'output_image_3': output_image_str[2], 
+			#'output_image_4': output_image_str[3],
+			'output_text_1': output_texts[0],
+			'output_text_2': output_texts[1],
+			'output_text_3': output_texts[2],
 			'debug_str': debug_str}
 
 if __name__ == '__main__':

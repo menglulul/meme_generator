@@ -249,6 +249,7 @@ def generate_meme(input):
 
   candidates = raw_outputs[0].argsort()[::-1][:3]
   results = []
+  result_texts = []
   for num in candidates:
     img_path = "images/" + templates_dict[temp_num2id[num]] +'.jpg'
     image = Image.open(img_path)
@@ -345,11 +346,13 @@ def generate_meme(input):
 
     real_out = ' '.join(out)
     real_out = real_out.replace('<UNK>','')
-    real_out=real_out.split('\n')
-    top = real_out[0]
-    bottom = real_out[1]
+    splited_out=real_out.split('\n')
+    top = splited_out[0]
+    bottom = splited_out[1]
+    result_texts.append(real_out)
     results.append(make_meme(top, bottom, img))
-  return results
+    
+  return results, result_texts
 
 if __name__ == '__main__':
     input = "thank you, next"

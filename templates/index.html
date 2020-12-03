@@ -61,32 +61,14 @@
       </div>
 
       <div class="col-12 border rounded-lg p-4 mt-4">
-        <!-- <div class="section-title mb-4">
-          Sample input:
-        </div>
-        <p class="section-title mb-4">
-          Output:
-        </p> -->
+        <div class="section-title mb-4">Output:</div>
         <div class="row text-center text-lg-left justify-content-center">
-          <div class="input-image-panel col-lg-6 col-md-6 col-12 mb-4 text-center">
-            <p class="text-muted px-2 text-smaller text-center m-0">
-                 Generated result 1
-            </p>
-            <img id="g-input-image" class="img-fluid img-thumbnail" width="80%" src="static/genderless-demo/gender-original.jpeg" alt="original image is here"/>
-          </div>
-
-          <div class="output-image-panel col-lg-6 col-md-6 col-12 mb-4 text-center">
-            <p class="text-muted px-2 text-smaller text-center m-0">
-                  Generated result 2
-            </p>
-            <img id="g-output-image" class="img-fluid img-thumbnail" width="80%" src="static/genderless-demo/gender-after.jpeg" alt="output image is here" />
-          </div>
-          <!-- {% for i in range(0, 4) %}
+          {% for i in range(1, 4) %}
           <div class="col-lg-3 col-md-6 p-4 m-0 text-center">
-            <img class="img-fluid img-thumbnail m-1" src="static/genderless-demo/gender-after-{{i}}.jpeg"
-              alt="example image {{i}}" />
+            <p id = "output-text-{{i}}" class="text-muted px-2 text-smaller text-center m-0">output example</p>
+            <img id = "output-image-{{i}}"  class="img-fluid img-thumbnail m-1" src="static/meme-demo/download ({{i}}).jpeg" alt="generated image {{i}}" />
           </div>
-          {% endfor %} -->
+          {% endfor %}
         </div>
       </div>
 
@@ -98,10 +80,10 @@
         <div class="section-title mb-4">Gallery of examples</div>
         <div class="row text-center text-lg-left justify-content-center">
 
-          {% for i in range(0, 12) %}
+          {% for i in range(4, 12) %}
           <div class="col-lg-3 col-md-6 p-4 m-0 text-center">
-            <a href="static/genderless-demo/gender-original-{{i}}.jpeg">
-              <img class="img-fluid img-thumbnail m-1" src="static/genderless-demo/gender-after-{{i}}.jpeg"
+            <a href="static/meme-demo/download ({{i}}).jpeg">
+              <img class="img-fluid img-thumbnail m-1" src="static/meme-demo/download ({{i}}).jpeg"
                 alt="example image {{i}}" />
             </a>
           </div>
@@ -126,7 +108,7 @@
   <!-- jQuery first, then Bootstrap JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="static/js/bootstrap.min.js"></script>
-  <script src="static/js/vislang.js"></script>
+  <script src="static/js/vislang.js?v=7"></script>
 </body>
 
 </html>

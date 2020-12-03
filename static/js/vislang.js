@@ -18,9 +18,12 @@ $(document).ready(function() {
         		// Empty error messages if any and hide the progress indicator.
             	$('#loading-box').toggleClass("d-none");
 				$('.flashes').empty()
-				// Place the input and output image content.
-            	$("#g-input-image").attr("src", "data:image/jpeg;base64," + response['input_image']);
-            	$("#g-output-image").attr("src", "data:image/jpeg;base64," + response['output_image']);
+				// Place the output image content.
+				for (i = 1; i<4; i++) {
+					$("#output-image-"+i).attr("src", "data:image/jpeg;base64," + response['output_image_'+i]);
+					$('#output-text-'+i).html(response['output_text_'+i]);
+				}
+				
             	$('.flashes').showInfo(response['debug_str']);
 
             } else {
@@ -48,7 +51,9 @@ $(document).ready(function() {
 		if(xhr && xhr.readyState != 4){ xhr.abort(); e.preventDefault(); return false;}
 
 		text_input = $("#text-input-1").val()
-
+	  	// Clear any error messages and show loading bar.
+		$('.flashes').empty()
+  		$('#loading-box').toggleClass("d-none");
 		// Prepare data to be sent with form.
 		var form_data = new FormData();
 		form_data.append('text_input', text_input);
