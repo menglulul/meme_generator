@@ -17,7 +17,7 @@
       <div class="jumbotron p-4 bg-light border mx-0 mx-md-4">
         <div class="col-sm-12 mx-auto">
           <h3 class="text-primary m-0">Meme Generator Demo</h3>
-          <p class="font-ninety-em d-lg-none mt-2 mb-0">Put some text here and see how our generator prints an
+          <p class="font-ninety-em d-none d-lg-block mt-2 mb-0">Put some text here and see how our generator prints an
             interesting meme!</p>
         </div>
       </div>
@@ -29,11 +29,11 @@
             <div id="upload-image-component" class="mx-auto mw-100 p-0 my-0 form-control-goodwidth">
 
               <div class="mb-1" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                <form action = "simple-demo" class="m-0 p-0" method="POST" id="text-input-form" name="text-input-form">
+                <form action = "simple-demo" autocomplete="off" class="m-0 p-0" method="POST" id="text-input-form" name="text-input-form">
                   <div class="p-1 shadow-sm rounded rounded-lg bg-white border">
                     <div class="rounded rounded-lg bg-white border">
                       <div class="input-group">
-                        <input type="search" name="text-input-1" placeholder="Enter a input text here..."
+                        <input type="search" name="text-input-1" placeholder="Enter input text here..."
                           class="form-control border-0" id="text-input-1" value="{{filename}}"
                           aria-describedby="button-addon1" />
                         <div class="input-group-append">
