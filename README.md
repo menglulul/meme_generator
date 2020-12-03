@@ -15,7 +15,15 @@ conda create -n vislang python=3.7    # Create a virtual environment
 source activate vislang         	    # Activate virtual environment
 conda install whoosh flask  # Install dependencies
 ```
-
+```
+conda install simpletransformers==0.9.1
+conda install torch torchvision
+conda install transformers==2.2.0
+conda install seqeval
+conda install tensorboardx
+conda install matplotlib
+pip3 install --user simpletransformers==0.9.1
+```
 
 ## Data 
 This code depens on data from the SBU dataset which is provided as a JSON file here http://www.cs.virginia.edu/~vicente/sbucaptions/ 

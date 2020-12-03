@@ -28,31 +28,13 @@
           <div class="wrapper-upload-image-component">
             <div id="upload-image-component" class="mx-auto mw-100 p-0 my-0 form-control-goodwidth">
 
-              <!-- 
-                <div class="mb-1" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                  <div class="p-1 rounded rounded-lg bg-white shadow-sm border">
-                  <div class="rounded rounded-lg bg-white border">
-                    <div class="input-group custom-file">
-                      <form action="simple-demo" class="m-0 p-0" method="POST" enctype="multipart/form-data" id="form-file-upload" name="form-file-upload">
-                      <input type="file" name="file-upload" class="custom-file-input" id="file-upload">
-                      <label class="custom-file-label-x border-0 form-control-placeholder" for="file-upload">
-                        Tap here to choose an image...
-                      </label>
-                      <i class="material-icons text-primary custom-file-label-x-icon">add_a_photo</i>
-                      </form>
-                    </div>
-                  </div>
-                  </div>
-                </div> -->
-
               <div class="mb-1" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                <form action="genderless-demo" class="m-0 p-0" method="POST" id="form-file-paste"
-                  name="form-file-paste">
+                <form action = "simple-demo" class="m-0 p-0" method="POST" id="text-input-form" name="text-input-form">
                   <div class="p-1 shadow-sm rounded rounded-lg bg-white border">
                     <div class="rounded rounded-lg bg-white border">
                       <div class="input-group">
-                        <input type="search" name="file-url" placeholder="Enter a input text here..."
-                          class="form-control border-0" id="image-input-url" value="{{filename}}"
+                        <input type="search" name="text-input-1" placeholder="Enter a input text here..."
+                          class="form-control border-0" id="text-input-1" value="{{filename}}"
                           aria-describedby="button-addon1" />
                         <div class="input-group-append">
                           <button type="submit" class="btn text-primary" id="button-addon1">
@@ -79,32 +61,32 @@
       </div>
 
       <div class="col-12 border rounded-lg p-4 mt-4">
-        <div class="section-title mb-4">
+        <!-- <div class="section-title mb-4">
           Sample input:
         </div>
         <p class="section-title mb-4">
           Output:
-        </p>
+        </p> -->
         <div class="row text-center text-lg-left justify-content-center">
+          <div class="input-image-panel col-lg-6 col-md-6 col-12 mb-4 text-center">
+            <p class="text-muted px-2 text-smaller text-center m-0">
+                 Generated result 1
+            </p>
+            <img id="g-input-image" class="img-fluid img-thumbnail" width="80%" src="static/genderless-demo/gender-original.jpeg" alt="original image is here"/>
+          </div>
 
-          <!-- <img id="g-input-image" class="col-lg-3 col-md-6 p-4 m-0" src="static/genderless-demo/gender-original.jpeg"
-            alt="original image is here" />
-          <img id="g-input-image" class="col-lg-3 col-md-6 p-4 m-0" src="static/genderless-demo/gender-original.jpeg"
-            alt="original image is here" />
-          <img id="g-input-image" class="col-lg-3 col-md-6 p-4 m-0" src="static/genderless-demo/gender-original.jpeg"
-            alt="original image is here" />
-            <img id="g-input-image" class="col-lg-3 col-md-6 p-4 m-0" src="static/genderless-demo/gender-original.jpeg"
-            alt="original image is here" /> -->
-
-          {% for i in range(0, 4) %}
+          <div class="output-image-panel col-lg-6 col-md-6 col-12 mb-4 text-center">
+            <p class="text-muted px-2 text-smaller text-center m-0">
+                  Generated result 2
+            </p>
+            <img id="g-output-image" class="img-fluid img-thumbnail" width="80%" src="static/genderless-demo/gender-after.jpeg" alt="output image is here" />
+          </div>
+          <!-- {% for i in range(0, 4) %}
           <div class="col-lg-3 col-md-6 p-4 m-0 text-center">
-
             <img class="img-fluid img-thumbnail m-1" src="static/genderless-demo/gender-after-{{i}}.jpeg"
               alt="example image {{i}}" />
-
-            <!--img class="img-fluid img-thumbnail m-1 d-none" src="static/genderless-demo/gender-original-{{i}}.jpeg" alt=""/-->
           </div>
-          {% endfor %}
+          {% endfor %} -->
         </div>
       </div>
 
@@ -122,21 +104,12 @@
               <img class="img-fluid img-thumbnail m-1" src="static/genderless-demo/gender-after-{{i}}.jpeg"
                 alt="example image {{i}}" />
             </a>
-            <!--img class="img-fluid img-thumbnail m-1 d-none" src="static/genderless-demo/gender-original-{{i}}.jpeg" alt=""/-->
           </div>
           {% endfor %}
 
         </div>
       </div>
 
-      <div class="col-12 border rounded-lg p-4 text-smallest mt-4 text-muted">
-        <strong>Technical Notes:</strong> This demo is running in a CPU-only cloud instance, hence the inference time it
-        takes to run this demo is between 10 and 15 seconds ignoring preprocessing and upload/download times. The images
-        uploded through this demo are not stored in our server or anywhere (not even temporarily), we only hold images
-        on the server-side in volatile memory while they are being processed and return the resulting image as base64
-        encoded strings directly to the user's browser. Any images presented here as examples were not uploaded by a
-        user but were images directly uploaded by our team. This is not a demo that aims to collect any data from users.
-      </div>
 
   </div>
 
@@ -153,7 +126,7 @@
   <!-- jQuery first, then Bootstrap JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="static/js/bootstrap.min.js"></script>
-  <script src="static/js/vislang.js?v=4"></script>
+  <script src="static/js/vislang.js"></script>
 </body>
 
 </html>

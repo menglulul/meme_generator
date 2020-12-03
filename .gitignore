@@ -1,1 +1,5 @@
 __pycache__/
+images/
+model/
+outputs/
+.DS_Store
