@@ -1,5 +1,6 @@
 # Meme generator website
-Source code repository for vision and language course project. Modified from the demo webpage of vislang.ai.
+Source code repository for vision and language course project. 
+Website modified from the demo webpage of vislang.ai. Meme captioning module refers:https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Image-Captioning
 
 ## Overview
 This webpage is implemented using Flask. The backend implements an encoder-decoder and bert
@@ -32,3 +33,5 @@ flask run
 1. Run the website backend.
 2. Open http://127.0.0.1:5000/ in the browser.
 3. Enter the text and click submit to see the generated result.
+
+
