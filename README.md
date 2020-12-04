@@ -1,21 +1,15 @@
 # vislang.ai website
-Source code repository for our vision, language, and learning webpage hosted at vislang.ai
-
+Source code repository for vision and language course project. Modified from the demo webpage of vislang.ai.
 
 ## Overview
-This webpage is implemented using Flask, and is configured in the app.yaml file to run using Google App Engine.
-The app also contains two subroutines for searching the SBU dataset (sbu-explorer), and the COCO dataset (coco-explorer).
-These two subroutines use the Whoosh indexing library for fast text search. The code for indexing these datasets can be
-found in the scripts directory.
+This webpage is implemented using Flask. The backend implements an encoder-decoder and bert
 
 ## Requirements
-- Setup a conda environment and install some prerequisite packages like this
+- Setup a conda environment and install some prerequisite packages. See the full dependencies in environment.yml.
 ```bash
 conda create -n vislang python=3.7    # Create a virtual environment
 source activate vislang         	    # Activate virtual environment
 conda install whoosh flask  # Install dependencies
-```
-```
 conda install simpletransformers==0.9.1
 conda install torch torchvision
 conda install transformers==2.2.0
@@ -25,12 +19,8 @@ conda install matplotlib
 pip3 install --user simpletransformers==0.9.1
 ```
 
-## Data 
-This code depens on data from the SBU dataset which is provided as a JSON file here http://www.cs.virginia.edu/~vicente/sbucaptions/ 
-and the caption JSON file for the COCO dataset which is provded here http://cocodataset.org/#download
-
 ## Running the website
-In order to test the website only the following commands need to be run.
+In order to test the website only the following commands need to be run for the backend.
 ```bash
 source activate vislang
 export FLASK_ENV=development
@@ -38,11 +28,7 @@ export FLASK_APP=main.py
 flask run
 ```
 
-## Deploying the website on Google App Engine.
-Create a Google App Engine account on Google Cloud and start a a project. You can see how to setup and configure a basic Flask app on Google App Engine here https://codelabs.developers.google.com/codelabs/cloud-app-engine-python3/#0
-
-Once everything is installed you should be able to just deploy using the following command:
-
-```bash
-gcloud app deploy
-```
+## Usage
+1. Run the website backend.
+2. Open http://127.0.0.1:5000/ in the browser.
+3. Enter the text and click submit to see the generated result.
