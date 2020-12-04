@@ -1,4 +1,4 @@
-# vislang.ai website
+# Meme generator website
 Source code repository for vision and language course project. Modified from the demo webpage of vislang.ai.
 
 ## Overview
