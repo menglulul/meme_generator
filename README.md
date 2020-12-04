@@ -20,6 +20,10 @@ conda install matplotlib
 pip3 install --user simpletransformers==0.9.1
 ```
 
+##Dataset and trained models
+The dataset(images and image-to-caption csv) and trained models can be downloaded from here:
+https://drive.google.com/drive/folders/1HhHfHV9q7TxfEyWDIhRjsAVGCgPALrn8?usp=sharing
+
 ## Running the website
 In order to test the website only the following commands need to be run for the backend.
 ```bash
